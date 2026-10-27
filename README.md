@@ -45,14 +45,14 @@ healthcheck:
 | `tunnel.responseByCode` | 依狀態碼的請求數（首個請求之後才有） |
 | `serverLocations`、`err` | 連線的 Cloudflare 資料中心；錯誤訊息 |
 
-指標名稱以 cloudflared 2026.9.3 對真連線的 tunnel 驗證過。升級 cloudflared 時要重新確認。
+指標名稱以 cloudflared 2026.10.4 對真連線的 tunnel 驗證過。升級 cloudflared 時要重新確認。
 
 升版規則：新增欄位不改 `v`；移除或改變語意的欄位才升 `v`，且要先讓讀取端能解析新版本，再發布新映像。
 
 ### 建置與發布
 
 - Pull request：測試並建置（`linux/amd64`、`linux/arm64`），不推送。
-- 推送標籤 `cloudflared-<cloudflared 版本>-probe<N>`（例：`cloudflared-2026.9.3-probe1`）：測試、建置、推到 GHCR，並在 workflow 的摘要列出要釘住的 `repo@sha256:…`。
+- 推送標籤 `cloudflared-<cloudflared 版本>-probe<N>`（例：`cloudflared-2026.10.4-probe1`）：測試、建置、推到 GHCR，並在 workflow 的摘要列出要釘住的 `repo@sha256:…`。
 - 第一次發布後，要在 GitHub 套件設定把 `cms-edge-cloudflared` 設為 **Public** 並連結此 repo。
 - 升級 cloudflared：改 `Dockerfile` 最後一個 `FROM` 的 digest，更新標籤中的版本。
 

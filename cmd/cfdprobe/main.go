@@ -29,7 +29,7 @@ const (
 	maxLocs     = 16
 )
 
-// Series names of cloudflared 2026.9.3, checked against a connected tunnel.
+// Series names of cloudflared 2026.10.4, checked against a connected tunnel.
 const (
 	mTotal  = "cloudflared_tunnel_total_requests"
 	mErrors = "cloudflared_tunnel_request_errors"

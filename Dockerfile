@@ -17,6 +17,6 @@ COPY go.mod ./
 COPY cmd ./cmd
 RUN GOOS="$TARGETOS" GOARCH="$TARGETARCH" go build -trimpath -buildvcs=false -ldflags "-s -w" -o /out/probe ./cmd/cfdprobe
 
-# cloudflared 2026.9.3 (index digest: linux/amd64 and linux/arm64).
-FROM cloudflare/cloudflared@sha256:072c067d25ccbe61d46e18f0d0723255f2bb5304f7317caa95b27031520ff92c
+# cloudflared 2026.10.4 (index digest: linux/amd64 and linux/arm64).
+FROM cloudflare/cloudflared@sha256:c6c7ae1d5dfdcb094ad344ed68ccffc26635c9c6be80965664c33baf064b0515
 COPY --from=build /out/probe /probe

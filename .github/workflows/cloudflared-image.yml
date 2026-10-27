@@ -1,7 +1,7 @@
 name: cloudflared-image
 
 # Pull requests: test and build only (nothing is pushed).
-# Tags `cloudflared-<cloudflared version>-probe<N>` (e.g. cloudflared-2026.9.3-probe1):
+# Tags `cloudflared-<cloudflared version>-probe<N>` (e.g. cloudflared-2026.10.4-probe1):
 # test, build for linux/amd64 and linux/arm64, push to GHCR and print the digest.
 
 on:
